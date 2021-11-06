@@ -1,0 +1,8 @@
+flask==2.0.1
+pandas==1.2.4
+numpy==
+matplotlib==
+sklearn==0.0
+seaborn==
+warnings==
+gunicorn==20.1.0
