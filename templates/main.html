@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Diabetes Prediction</title>
+  <title>Diabetes Prediction Test</title>
   <link rel="shortcut icon" type="image/jpg"
     href="https://w7.pngwing.com/pngs/732/803/png-transparent-black-and-white-pattern-number-8-text-black-number-thumbnail.png" />
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
@@ -14,11 +14,17 @@
 <body class="font-serif bg-green-500">
   <div class="flex flex-col justify-center items-center">
     <div class="p-16 bg-white overflow-hidden shadow-lg">
-      <div class="font-bold text-xl mt-8 mb-2">
-        Diabetes Prediction
+      <div class="font-bold text-xl">
+        Diabetes Prediction Test
       </div>
       <hr />
-      <br />
+      <div class="result mt-4" align="center">
+        <span class="font-bold">{{ patient_name }}</span>
+        <span>{{ prediction_text }}</span>
+        <p class="{{ result_class }}">
+          {{ result }}
+        </p>
+      </div>
       <form id="review-form" action="{{ url_for('main') }}" method="POST">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="review">
           Enter your Full name:
@@ -159,13 +165,6 @@
                        " />
 
       </form>
-      <div class="result mt-8" align="center">
-        <span class="font-bold">{{ patient_name }}</span>
-        <span>{{ prediction_text }}</span>
-        <p class="text-green-700 text-lg font-bold border mt-2">
-          {{ result }}
-        </p>
-      </div>
     </div>
   </div>
   <script src="{{ url_for('static',filename='main.js') }}" type="text/javascript"></script>

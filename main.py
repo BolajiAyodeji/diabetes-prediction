@@ -32,8 +32,9 @@ def main():
             prediction = "Negative (Not diabetic)"
 
         prediction_text = "the result of your Diabetes prediction test is:"
+        result_class = "text-green-700 text-lg font-bold border mb-4"
 
-        return(flask.render_template('main.html', patient_name=patient_name, prediction_text=prediction_text, result=prediction))
+        return(flask.render_template('main.html', patient_name=patient_name, prediction_text=prediction_text, result_class=result_class, result=prediction))
 
 
 if __name__ == '__main__':
