@@ -15,16 +15,14 @@ def main():
 
     if flask.request.method == 'POST':
         patient_name = flask.request.form.get("patient-name") + ","
+        age = flask.request.form.get("age")
         glucose = flask.request.form.get("glucose")
         blood_pressure = flask.request.form.get("blood-pressure")
         skin_thickness = flask.request.form.get("skin-thickness")
         insulin = flask.request.form.get("insulin")
         bmi = flask.request.form.get("bmi")
-        diabetes_pedigree_function = flask.request.form.get(
-            "diabetes-pedigree-function")
-        age = flask.request.form.get("age")
         prediction = model.predict(
-            [[glucose, blood_pressure, skin_thickness, insulin, bmi, diabetes_pedigree_function, age]])
+            [[age, glucose, blood_pressure, skin_thickness, insulin, bmi]])
 
         if prediction == 1:
             prediction = "Positive (Diabetic)"
@@ -32,7 +30,7 @@ def main():
             prediction = "Negative (Not diabetic)"
 
         prediction_text = "the result of your Diabetes prediction test is:"
-        result_class = "text-green-700 text-lg font-bold border mb-4"
+        result_class = "text-green-700 text-lg font-bold border mt-4 mb-8"
 
         return(flask.render_template('main.html', patient_name=patient_name, prediction_text=prediction_text, result_class=result_class, result=prediction))
 

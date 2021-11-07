@@ -12,13 +12,13 @@
 </head>
 
 <body class="font-serif bg-green-500">
-  <div class="flex flex-col justify-center items-center">
+  <div class="flex flex-col justify-center items-center py-4">
     <div class="p-16 bg-white overflow-hidden shadow-lg">
-      <div class="font-bold text-xl">
+      <div class="font-bold text-xl text-center">
         Diabetes Prediction Test
+        <hr />
       </div>
-      <hr />
-      <div class="result mt-4" align="center">
+      <div class="result mt-8" align="center">
         <span class="font-bold">{{ patient_name }}</span>
         <span>{{ prediction_text }}</span>
         <p class="{{ result_class }}">
@@ -126,22 +126,6 @@
           Enter your BMI:
         </label>
         <input type="number" name="bmi" id="bmi" class="
-                  shadow
-                  appearance-none
-                  border
-                  w-full
-                  py-2
-                  px-3
-                  mb-8
-                  text-gray-700
-                  leading-tight
-                  focus:outline-none focus:shadow-outline
-                  " required></input>
-
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="review">
-          Enter your Diabetes Pedigree Function:
-        </label>
-        <input type="number" name="diabetes-pedigree-function" id="diabetes-pedigree-function" class="
                   shadow
                   appearance-none
                   border
